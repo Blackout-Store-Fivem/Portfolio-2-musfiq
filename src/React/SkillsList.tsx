@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const CategoryIcons: Record<string, JSX.Element> = {
+const CategoryIcons: Record<string, React.ReactElement> = {
   "Video editing": (
     <svg
       xmlns="http://www.w3.org/2000/svg"
