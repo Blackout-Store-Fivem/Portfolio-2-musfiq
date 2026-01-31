@@ -1,7 +1,27 @@
 import React, { useState } from "react";
 
-const CategoryIcons = {
-  "Web Development": (
+const CategoryIcons: Record<string, JSX.Element> = {
+  "Video editing": (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className="w-6 h-6 text-[var(--sec)] opacity-70"
+    >
+      <path d="M3 3.9934C3 3.44536 3.44594 3 3.9934 3H20.0066C20.5547 3 21 3.44594 21 3.9934V20.0066C21 20.5547 20.5541 21 20.0066 21H3.9934C3.44536 21 3 20.5541 3 20.0066V3.9934ZM5 5V19H19V5H5ZM10.6219 12.4142L15.5008 9.4802L10.6219 6.54624V12.4142Z"></path>
+    </svg>
+  ),
+  "Facebook page management": (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className="w-6 h-6 text-[var(--sec)] opacity-70"
+    >
+      <path d="M9.19795 21.5H13.198V13.4901H16.8021L17.198 9.50977H13.198V7.5C13.198 6.94772 13.6457 6.5 14.198 6.5H17.198V2.5H14.198C11.4365 2.5 9.19795 4.73858 9.19795 7.5V9.50977H7.19795L6.80206 13.4901H9.19795V21.5Z"></path>
+    </svg>
+  ),
+  "Ad run": (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
@@ -11,24 +31,24 @@ const CategoryIcons = {
       <path d="M21 3C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H21ZM20 11H4V19H20V11ZM20 5H4V9H20V5ZM11 6V8H9V6H11ZM7 6V8H5V6H7Z"></path>
     </svg>
   ),
-  "Graphic design": (
+  "Logos": (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="currentColor"
       className="w-6 h-6 text-[var(--sec)] opacity-70"
     >
-      <path d="M7 4V20H17V4H7ZM6 2H18C18.5523 2 19 2.44772 19 3V21C19 21.5523 18.5523 22 18 22H6C5.44772 22 5 21.5523 5 21V3C5 2.44772 5.44772 2 6 2ZM12 17C12.5523 17 13 17.4477 13 18C13 18.5523 12.5523 19 12 19C11.4477 19 11 18.5523 11 18C11 17.4477 11.4477 17 12 17Z"></path>
+      <path d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12C20 16.4183 16.4183 20 12 20ZM12 6L8 10H11V14H13V10H16L12 6Z"></path>
     </svg>
   ),
-  "Game Development": (
+  "Software": (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="currentColor"
       className="w-6 h-6 text-[var(--sec)] opacity-70"
     >
-      <path d="M5.7646 7.99998L5.46944 7.26944C5.26255 6.75737 5.50995 6.17454 6.02202 5.96765L15.2939 2.22158C15.8059 2.01469 16.3888 2.26209 16.5956 2.77416L22.2147 16.6819C22.4216 17.194 22.1742 17.7768 21.6622 17.9837L12.3903 21.7298C11.8783 21.9367 11.2954 21.6893 11.0885 21.1772L11.0002 20.9586V21H7.00021C6.44792 21 6.00021 20.5523 6.00021 20V19.7303L2.65056 18.377C2.13849 18.1701 1.89109 17.5873 2.09798 17.0752L5.7646 7.99998ZM8.00021 19H10.2089L8.00021 13.5333V19ZM6.00021 12.7558L4.32696 16.8972L6.00021 17.6084V12.7558ZM7.69842 7.44741L12.5683 19.5008L19.9858 16.5039L15.1159 4.45055L7.69842 7.44741ZM10.6766 9.47974C10.1645 9.68663 9.5817 9.43924 9.37481 8.92717C9.16792 8.4151 9.41532 7.83227 9.92739 7.62538C10.4395 7.41849 11.0223 7.66588 11.2292 8.17795C11.4361 8.69002 11.1887 9.27286 10.6766 9.47974Z"></path>
+      <path d="M17.409 19C17.409 19.5523 16.9613 20 16.409 20H7.59099C7.03871 20 6.59099 19.5523 6.59099 19V5C6.59099 4.44772 7.03871 4 7.59099 4H16.409C16.9613 4 17.409 4.44772 17.409 5V19ZM15.409 6H8.59099V18H15.409V6ZM13 10H11V12H13V10ZM13 14H11V16H13V14Z"></path>
     </svg>
   ),
 };
@@ -37,20 +57,31 @@ const SkillsList = () => {
   const [openItem, setOpenItem] = useState<string | null>(null);
 
   const skills = {
-    "Web Development": [
-      "Single Page Applications (SPAs)",
-      "Landing pages and business websites",
-      "Portfolio websites",
+    "Video editing": [
+      "Professional video editing for social media & marketing",
+      "Short-form and long-form content",
+      "Color grading and motion graphics",
     ],
-    "Graphic design": [
-      "Software based Design: Canva,Photoshop",
-      "Game Arts & Assets Development: 3D Modeling,Texture Painting",
-      "Branding: Logo Design , Gaming Banner Design",
+    "Facebook page management": [
+      "Content planning and posting",
+      "Community engagement and replies",
+      "Analytics and growth strategies",
     ],
-    "Game Development": [
-      "Multiplayer Modification And Development",
-      "3rd party Multiplayer Mods : FIVEM,SA:MP,RAGEMP",
-      "Game Development :  Unreal Engine",
+    "Ad run": [
+      "Facebook & Meta Ads campaigns",
+      "Targeting and audience setup",
+      "Budget optimization and reporting",
+    ],
+    "Logos": [
+      "Brand identity and logo design",
+      "Visual identity for businesses",
+      "Clean, memorable branding",
+    ],
+    "Software": [
+      "Adobe Premiere Pro — video editing",
+      "Adobe After Effects — motion & VFX",
+      "CapCut — quick edits & trends",
+      "Canva — graphics & social content",
     ],
   };
 
